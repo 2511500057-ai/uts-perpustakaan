@@ -89,3 +89,62 @@ sendResponse(
     $data,
     200);
 }
+
+//page
+if (isset($_GET['page']) || isset($_GET['limit'])) {
+
+    $page = isset($_GET['page'])
+        ? (int) $_GET['page']
+        : 1;
+
+    $limit = isset($_GET['limit'])
+        ? (int) $_GET['limit']
+        : 10;
+
+        //page dan limit boleh kurang dari 1
+    if ($page < 1) {
+        $page = 1; //nilai default
+    }
+
+    if ($limit < 1) {
+        $limit = 10;
+    }
+
+    $offset = ($page - 1) * $limit;
+
+    $q = "SELECT
+            b.id,
+            b.kd_buku,
+            b.judul,
+            b.penulis,
+            b.penerbit,
+            b.tahun_terbit,
+            b.kategori,
+            b.stok
+        FROM buku b
+        ORDER BY b.id DESC
+        LIMIT $limit OFFSET $offset";
+
+        $r = mysqli_query($koneksi, $q);
+
+        if (!$r) {
+            sendResponse(
+                false,
+                "query gagal: " . mysqli_error($koneksi),
+                null,
+                500
+            );
+        }
+
+        $data = [];
+
+         while ($row = mysqli_fetch_assoc($r)) {
+        $data[] = $row;
+}
+
+        sendResponse(
+            true,
+            "berhasil",
+            $data,
+            200);
+}
