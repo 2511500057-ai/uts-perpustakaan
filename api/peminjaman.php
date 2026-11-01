@@ -235,7 +235,7 @@ switch ($method) {
                     $tanggal_kembali = $input['tanggal_kembali'];
                     $status = $input['status'];
 
-                    //cek anggota apakah ada
+                    //cek id anggota apakah ada
                     $stmt = mysqli_prepare($koneksi, "SELECT id FROM anggota WHERE id= ?");
                     mysqli_stmt_bind_param($stmt, "i", $anggota_id);
                     mysqli_stmt_execute($stmt);
@@ -245,7 +245,7 @@ switch ($method) {
                         sendResponse(false, "Anggota_id tidak ditemukan", null, 404);
                     }
 
-                    //cek buku apakah ada
+                    //cek id buku apakah ada
                     $stmt = mysqli_prepare($koneksi, "SELECT id FROM buku WHERE id= ?");
                     mysqli_stmt_bind_param($stmt, "i", $buku_id);
                     mysqli_stmt_execute($stmt);
@@ -307,26 +307,41 @@ switch ($method) {
                     $status = $input['status'];
 
                     // cek apakah peminjaman dengan id ada?
-                    $cek_peminjaman = mysqli_query($koneksi, "SELECT id FROM peminjaman WHERE id = '$id'");
+                    $stmt = mysqli_prepare($koneksi, "SELECT id FROM peminjaman WHERE id = ?");
+                    mysqli_stmt_bind_param($stmt, "i", $id);
+                    mysqli_stmt_execute($stmt);
+                    $cek_peminjaman = mysqli_stmt_get_result($stmt);
                     //jika tidak ad error 404
                     if(mysqli_num_rows ($cek_peminjaman) == 0) {
                         sendResponse(false, "peminjaman tidak ditemukan", null, 404);
                     }
 
-                    //cek anggota apakah ada
-                    $cek = mysqli_query($koneksi, "SELECT id FROM anggota WHERE id='$anggota_id'");
+                    //cek id anggota apakah ada
+                    $stmt = mysqli_prepare($koneksi, "SELECT id FROM anggota WHERE id= ?");
+                    mysqli_stmt_bind_param($stmt, "i", $anggota_id);
+                    mysqli_stmt_execute($stmt);
+                    $cek = mysqli_stmt_get_result($stmt);
+
                     if (mysqli_num_rows($cek) == 0) {
                         sendResponse(false, "Anggota_id tidak ditemukan", null, 404);
                     }
 
-                    //cek buku apakah ada
-                    $cek = mysqli_query($koneksi, "SELECT id FROM buku WHERE id='$buku_id'");
-                    if (mysqli_num_rows($cek) == 0) {
+                    //cek id buku apakah ada
+                    $stmt = mysqli_prepare($koneksi, "SELECT id FROM buku WHERE id= ?");
+                    mysqli_stmt_bind_param($stmt, "i", $buku_id);
+                    mysqli_stmt_execute($stmt);
+                    $cek_bk = mysqli_stmt_get_result($stmt);
+
+                    if (mysqli_num_rows($cek_bk) == 0) {
                         sendResponse(false, "Buku_id tidak ditemukan", null, 404);
                     }
 
                     //cek kd_peminjaman apakah unik atau tidak
-                    $cek_kd = mysqli_query($koneksi, "SELECT id FROM peminjaman WHERE kd_peminjaman='$kd_peminjaman' AND id != '$id'");
+                    $stmt = mysqli_prepare($koneksi, "SELECT id FROM peminjaman WHERE kd_peminjaman= ? AND id != ?");
+                    mysqli_stmt_bind_param($stmt, "si", $kd_peminjaman, $id);
+                    mysqli_stmt_execute($stmt);
+                    $cek_kd = mysqli_stmt_get_result($stmt);
+
                     if (mysqli_num_rows($cek_kd) > 0) {
                         sendResponse(false, "Kd peminjaman sudah terdaftar", null, 409);
                     }
