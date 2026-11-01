@@ -336,6 +336,30 @@ switch ($method) {
 
                 break;
 
+                case 'DELETE':
+
+                //delete disini
+                $id = (int) $_GET['id'];
+
+                // cek apakah peminjaman dengan id ada?
+                    $cek_peminjaman = mysqli_query($koneksi, "SELECT id FROM peminjaman WHERE id = '$id'");
+                //jika tidak ad error 404
+                    if(mysqli_num_rows ($cek_peminjaman) == 0) {
+                        sendResponse(false, "peminjaman tidak ditemukan", null, 404);
+                    }
+
+                //query delete
+                $q = "DELETE FROM peminjaman WHERE id = '$id'";
+
+                
+                if (mysqli_stmt_execute($stmt)) {
+                    sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
+                } else {
+                    error_log(mysqli_error($koneksi));
+                    sendResponse(false, "terjadi kesalahan pada server", null, 500);
+                }
+                break;
+
             default:
             sendResponse(false, "method tidak diijinkan", null, 405);
             break;
