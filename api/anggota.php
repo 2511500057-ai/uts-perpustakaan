@@ -296,23 +296,46 @@ break;
 
 case 'DELETE':
 
-    //delete
-    $id = $_GET['id'];
+    // Cek apakah ID tersedia
+    if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+        sendResponse(false, "ID anggota wajib diisi", null, 400);
+    }
 
-    //cek apakah anggota dengan id ada
-    $cek_anggota = mysqli_query($koneksi, "SELECT id FROM anggota WHERE id = '$id'");
+    $id = (int) $_GET['id'];
+
+    // Cek apakah anggota tersedia
+    $q_cek = "SELECT id FROM anggota WHERE id = '$id'";
+    $cek_anggota = mysqli_query($koneksi, $q_cek);
+
+    if (!$cek_anggota) {
+        sendResponse(false, "query gagal: " . mysqli_error($koneksi), null, 500);
+    }
 
     if (mysqli_num_rows($cek_anggota) == 0) {
         sendResponse(false, "anggota tidak ditemukan", null, 404);
     }
 
-    //query delete
+    // Hapus data anggota
     $q = "DELETE FROM anggota WHERE id = '$id'";
 
     if (mysqli_query($koneksi, $q)) {
-        sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
+
+        sendResponse(
+            true,
+            "data berhasil dihapus",
+            ["id" => $id],
+            200
+        );
+
     } else {
-        sendResponse(false, mysqli_error($koneksi), null, 500);
+
+        sendResponse(
+            false,
+            "gagal menghapus data: " . mysqli_error($koneksi),
+            null,
+            500
+        );
+
     }
 
 break;
