@@ -205,6 +205,63 @@ switch ($method) {
 
                 break;
 
+                case 'POST':
+                    //post
+                    $input = json_decode(file_get_contents("php://input"), true);
+
+                    //cek apakah input ada dan ada
+                    if (!$input ||
+                    !isset($input['kd_peminjaman']) ||
+                    !isset($input['anggota_id']) ||
+                    !isset($input['buku_id']) ||
+                    !isset($input['tanggal_pinjam']) ||
+                    !isset($input['tanggal_kembali']) ||
+                    !isset($input['status'])
+                    ) {
+                        sendResponse(false, "field kd_peminjaman, anggota_id, buku_id, tanggal_pinjam, tanggal_kembali, status wajib ada", null, 400);
+                    }
+
+                    $kd_peminjaman = $input['kd_peminjaman'];
+                    $anggota_id = (int) $input['anggota_id'];
+                    $buku_id = (int) $input['buku_id'];
+                    $tanggal_pinjam = $input['tanggal_pinjam'];
+                    $tanggal_kembali = $input['tanggal_kembali'];
+                    $status = $input['status'];
+
+                    //cek anggota apakah ada
+                    $cek = mysqli_query($koneksi, "SELECT id From anggota WHERE id='$anggota_id'");
+                    if (mysqli_num_rows($cek) == 0) {
+                        sendResponse(false, "Anggota_id tidak ditemukan", null, 404);
+                    }
+
+                    //cek buku apakah ada
+                    $cek = mysqli_query($koneksi, "SELECT id From buku WHERE id='$buku_id'");
+                    if (mysqli_num_rows($cek) == 0) {
+                        sendResponse(false, "Buku_id tidak ditemukan", null, 404);
+                    }
+
+                    //cek kd_peminjaman apakah unik atau tidak
+                    $cek_kd = mysqli_query($koneksi, "SELECT id From peminjaman WHERE kd_peminjaman='$kd_peminjaman'");
+                    if (mysqli_num_rows($cek_kd) > 0) {
+                        sendResponse(false, "Kd peminjaman sudah terdaftar", null, 409);
+                    }
+
+                    //insert data
+                    $stmt = mysqli_prepare(
+                    $koneksi,
+                    "INSERT INTO peminjaman (kd_peminjaman, anggota_id, buku_id, tanggal_pinjam, tanggal_kembali, status) VALUES (?, ?, ?, ?, ?, ?)"
+                    );
+                    mysqli_stmt_bind_param($stmt, "siisss", $kd_peminjaman, $anggota_id, $buku_id, $tanggal_pinjam, $tanggal_kembali, $status);
+
+                    if (mysqli_stmt_execute($stmt)) {
+                        sendResponse(true, "data tersimpan", ["id" => mysqli_insert_id($koneksi)], 201);
+                    } else {
+                        error_log(mysqli_error($koneksi));
+                        sendResponse(false, "terjadi kesalahan pada server", null, 500);
+                    }
+
+                break;
+
             default:
             sendResponse(false, "method tidak diijinkan", null, 405);
             break;
