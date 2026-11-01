@@ -10,37 +10,42 @@ switch ($method) {
 
     case 'GET':
 
-        // GET berdasarkan ID
-        if (isset($_GET['id'])) {
+     
+// GET berdasarkan ID
+if (isset($_GET['id'])) {
 
-            $id = $_GET['id'];
+    $id = $_GET['id'];
 
-            $q = "SELECT
-                    id,
-                    kd_anggota,
-                    nama,
-                    jenis_kelamin,
-                    no_hp,
-                    alamat,
-                    email
-                FROM anggota
-                WHERE id = '$id'";
+    $q = "SELECT
+        id,
+        kd_anggota,
+        nama,
+        jenis_kelamin,
+        no_hp,
+        alamat,
+        email
+    FROM anggota
+    WHERE id = '$id";
+    $r = mysqli_query($koneksi, $q);
 
-            $r = mysqli_query($koneksi, $q);
+    if (!$r) {
+        sendResponse(
+            false,
+            "query gagal: " . mysqli_error($koneksi),
+            null,
+            500
+        );
+    }
 
-            if (!$r) {
-                sendResponse(false, "query gagal: " . mysqli_error($koneksi), null, 500);
-            }
+    $data = mysqli_fetch_assoc($r);
 
-            $data = mysqli_fetch_assoc($r);
+    if (!$data) {
+        sendResponse(false, "anggota tidak ditemukan", null, 404);
+    }
 
-            if (!$data) {
-                sendResponse(false, "anggota tidak ditemukan", null, 404);
-            }
+    sendResponse(true, "berhasil", $data, 200);
+}
 
-            sendResponse(true, "berhasil", $data, 200);
-
-        }
 
         // GET berdasarkan pencarian
         elseif (isset($_GET['search'])) {
