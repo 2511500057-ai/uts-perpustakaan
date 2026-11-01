@@ -130,7 +130,8 @@ switch ($method) {
 
         $offset = ($page - 1) * $limit;
 
-        $q = "SELECT
+        $stmt = mysqli_prepare($koneksi, 
+            "SELECT
                 p.id,
                 p.kd_peminjaman,
                 a.nama AS nama_anggota,
@@ -142,9 +143,12 @@ switch ($method) {
             LEFT JOIN anggota a ON p.anggota_id = a.id
             LEFT JOIN buku b ON p.buku_id = b.id
             ORDER BY p.id DESC
-            LIMIT $limit OFFSET $offset";
+            LIMIT ? OFFSET ?");
 
-            $r = mysqli_query($koneksi, $q);
+            mysqli_stmt_bind_param($stmt, "ii", $limit, $offset);
+            mysqli_stmt_execute($stmt);
+
+            $r = mysqli_stmt_get_result($stmt);
 
             if (!$r) {
             error_log(mysqli_error($koneksi));
