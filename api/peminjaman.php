@@ -376,7 +376,10 @@ switch ($method) {
                 $id = (int) $_GET['id'];
 
                 // cek apakah peminjaman dengan id ada?
-                    $cek_peminjaman = mysqli_query($koneksi, "SELECT id FROM peminjaman WHERE id = '$id'");
+                    $stmt = mysqli_prepare($koneksi, "SELECT id FROM peminjaman WHERE id = ?");
+                    mysqli_stmt_bind_param($stmt, "i", $id);
+                    mysqli_stmt_execute($stmt);
+                    $cek_peminjaman = mysqli_stmt_get_result($stmt);
                 //jika tidak ad error 404
                     if(mysqli_num_rows ($cek_peminjaman) == 0) {
                         sendResponse(false, "peminjaman tidak ditemukan", null, 404);
