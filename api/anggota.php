@@ -217,11 +217,104 @@ switch ($method) {
     break;
 
 
-    // method tidak diijinkan
-    default:
+    
+case 'PUT':
+    //put
+    $input = json_decode(file_get_contents("php://input"), true);
 
-        sendResponse(false, "method tidak diijinkan", null, 405);
+    //cek apakah input ada dan field wajib
+    if (
+        !$input ||
+        !isset($input['kd_anggota']) ||
+        !isset($input['nama']) ||
+        !isset($input['jenis_kelamin']) ||
+        !isset($input['no_hp']) ||
+        !isset($input['alamat']) ||
+        !isset($input['email'])
+    ) {
+        sendResponse(false, "field kd_anggota, nama, jenis_kelamin, no_hp, alamat, email wajib", null, 400);
+    }
 
-    break;
+    $id = $_GET['id'];
+
+    $kd_anggota = $input['kd_anggota'];
+    $nama = $input['nama'];
+    $jenis_kelamin = $input['jenis_kelamin'];
+    $no_hp = $input['no_hp'];
+    $alamat = $input['alamat'];
+    $email = $input['email'];
+
+    //cek jenis kelamin
+    if (!in_array($jenis_kelamin, ['Laki-laki', 'Perempuan'])) {
+        sendResponse(false, "jenis_kelamin harus Laki-laki atau Perempuan", null, 400);
+    }
+
+    //cek apakah anggota dengan id ada
+    $cek_anggota = mysqli_query($koneksi, "SELECT id FROM anggota WHERE id = '$id'");
+
+    if (mysqli_num_rows($cek_anggota) == 0) {
+        sendResponse(false, "anggota tidak ditemukan", null, 404);
+    }
+
+    //cek kd_anggota apakah unik atau tidak
+    $cek_kd = mysqli_query($koneksi, "SELECT id FROM anggota WHERE kd_anggota='$kd_anggota' AND id != '$id'");
+
+    if (mysqli_num_rows($cek_kd) > 0) {
+        sendResponse(false, "kd_anggota sudah terdaftar", null, 409);
+    }
+
+    //cek email apakah unik atau tidak
+    $cek_email = mysqli_query($koneksi, "SELECT id FROM anggota WHERE email='$email' AND id != '$id'");
+
+    if (mysqli_num_rows($cek_email) > 0) {
+        sendResponse(false, "email sudah terdaftar", null, 409);
+    }
+
+    //update data
+    $q = "UPDATE anggota SET
+            kd_anggota = '$kd_anggota',
+            nama = '$nama',
+            jenis_kelamin = '$jenis_kelamin',
+            no_hp = '$no_hp',
+            alamat = '$alamat',
+            email = '$email'
+          WHERE id = '$id'";
+
+    if (mysqli_query($koneksi, $q)) {
+        sendResponse(true, "data berhasil diperbaharui", ["id" => $id], 200);
+    } else {
+        sendResponse(false, mysqli_error($koneksi), null, 500);
+    }
+
+break;
+
+
+case 'DELETE':
+
+    //delete
+    $id = $_GET['id'];
+
+    //cek apakah anggota dengan id ada
+    $cek_anggota = mysqli_query($koneksi, "SELECT id FROM anggota WHERE id = '$id'");
+
+    if (mysqli_num_rows($cek_anggota) == 0) {
+        sendResponse(false, "anggota tidak ditemukan", null, 404);
+    }
+
+    //query delete
+    $q = "DELETE FROM anggota WHERE id = '$id'";
+
+    if (mysqli_query($koneksi, $q)) {
+        sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
+    } else {
+        sendResponse(false, mysqli_error($koneksi), null, 500);
+    }
+
+break;
+
+
+default:
+    sendResponse(false, "method tidak diijinkan", null, 405);
+break;
 
 }
