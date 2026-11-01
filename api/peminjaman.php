@@ -175,7 +175,8 @@ switch ($method) {
     }
 
     //get all
-            $q = "SELECT p.id,
+            $stmt = mysqli_prepare($koneksi, 
+            "SELECT p.id,
             p.kd_peminjaman,
             a.nama AS nama_anggota,
             b.judul AS judul_buku,
@@ -185,9 +186,11 @@ switch ($method) {
             FROM peminjaman p
             LEFT JOIN anggota a ON p.anggota_id = a.id
             LEFT JOIN buku b ON p.buku_id = b.id
-            ORDER BY p.id DESC";
+            ORDER BY p.id DESC");
 
-                $r = mysqli_query($koneksi, $q);
+            mysqli_stmt_execute($stmt);
+
+            $r = mysqli_stmt_get_result($stmt);
 
             if (!$r) {
                 error_log(mysqli_error($koneksi));
