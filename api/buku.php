@@ -251,4 +251,32 @@ switch ($method) {
     default:
         sendResponse(false, "method tidak diijinkan", null, 405);
         break;
+
+        case 'DELETE':
+
+                //delete disini
+                $id = $_GET['id'];
+
+                // cek apakah mahasiswa dengan id ada?
+                $cek_buku = mysqli_query($koneksi, "SELECT id FROM buku WHERE id = '$id'");
+                //jika tidak ad error 404
+                if(mysqli_num_rows ($cek_buku) == 0) {
+                    sendResponse(false, "buku tidak ditemukan", null, 404);
+                }
+
+                //query delete
+                $q = "DELETE FROM buku WHERE id = '$id'";
+
+                
+                if (mysqli_query($koneksi, $q)) {
+                    sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
+                } else {
+                    error_log(mysqli_error($koneksi));
+                    sendResponse(false, "terjadi kesalahan pada server", null, 500);
+                }
+                break;
+
+            default:
+            sendResponse(false, "method tidak diijinkan", null, 405);
+            break;
 }
