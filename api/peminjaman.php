@@ -296,6 +296,11 @@ switch ($method) {
                     ) {
                         sendResponse(false, "field kd_peminjaman, anggota_id, buku_id, tanggal_pinjam, tanggal_kembali, status wajib ada", null, 400);
                     }
+
+                    //validasi id ketika id tidak ditambahkan di url
+                    if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int) $_GET['id'] <= 0) {
+                        sendResponse(false, "id wajib diisi", null, 400);
+                    }
                     
                     $id = (int) $_GET['id'];
 
@@ -372,6 +377,11 @@ switch ($method) {
 
                 case 'DELETE':
 
+                //validasi id ketika id tidak ditambahkan di url
+                    if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int) $_GET['id'] <= 0) {
+                        sendResponse(false, "id wajib diisi", null, 400);
+                    }
+                    
                 //delete disini
                 $id = (int) $_GET['id'];
 
