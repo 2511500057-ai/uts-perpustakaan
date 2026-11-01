@@ -148,3 +148,19 @@ if (isset($_GET['page']) || isset($_GET['limit'])) {
             $data,
             200);
 }
+
+//get all
+$q = "SELECT b.id, b.kd_buku, b.judul, b.penulis, b.penerbit, b.tahun_terbit, b.kategori, b.stok
+FROM buku b
+ORDER BY b.id DESC";
+
+$r = mysqli_query($koneksi, $q);
+
+if (!$r) sendResponse(false, "query gagal: " . mysqli_error($koneksi), null, 500);
+
+$data = [];
+while ($row = mysqli_fetch_assoc($r)) {
+    $data[] = $row;
+}
+
+sendResponse(true, "berhasil", $data, 200);
