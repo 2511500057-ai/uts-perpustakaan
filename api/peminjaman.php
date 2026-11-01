@@ -349,9 +349,10 @@ switch ($method) {
                     }
 
                 //query delete
-                $q = "DELETE FROM peminjaman WHERE id = '$id'";
+                $stmt = mysqli_prepare($koneksi, "DELETE FROM peminjaman WHERE id = ?");
 
-                
+                mysqli_stmt_bind_param($stmt, "i", $id);
+
                 if (mysqli_stmt_execute($stmt)) {
                     sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
                 } else {
