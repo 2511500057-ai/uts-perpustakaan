@@ -170,6 +170,41 @@ switch ($method) {
                 200);
     }
 
+    //get all
+            $q = "SELECT p.id,
+            p.kd_peminjaman,
+            a.nama AS nama_anggota,
+            b.judul AS judul_buku,
+            p.tanggal_pinjam,
+            p.tanggal_kembali,
+            p.status
+            FROM peminjaman p
+            LEFT JOIN anggota a ON p.anggota_id = a.id
+            LEFT JOIN buku b ON p.buku_id = b.id
+            ORDER BY p.id DESC";
+
+                $r = mysqli_query($koneksi, $q);
+
+            if (!$r) {
+                error_log(mysqli_error($koneksi));
+
+                sendResponse(
+                    false,
+                    "terjadi kesalahan pada server",
+                    null,
+                    500
+            );
+        }
+
+                $data = [];
+                while ($row = mysqli_fetch_assoc($r)) {
+                    $data[] = $row;
+                }
+
+                sendResponse(true, "berhasil", $data, 200);
+
+                break;
+
             default:
             sendResponse(false, "method tidak diijinkan", null, 405);
             break;
