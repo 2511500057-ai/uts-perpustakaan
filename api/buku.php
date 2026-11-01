@@ -12,16 +12,16 @@ switch ($method) {
             $id = $_GET['id'];
 
             $q = "SELECT
-                    b.id,
-                    b.kd_buku,
-                    b.judul,
-                    b.penulis,
-                    b.penerbit,
-                    b.tahun_terbit,
-                    b.kategori,
-                    b.stok
-                FROM buku b
-                WHERE b.id = '$id'";
+                    id,
+                    kd_buku,
+                    judul,
+                    penulis,
+                    penerbit,
+                    tahun_terbit,
+                    kategori,
+                    stok
+                FROM buku
+                WHERE id = '$id'";
 
             $r = mysqli_query($koneksi, $q);
 
@@ -53,21 +53,21 @@ switch ($method) {
             $search = $_GET['search'];
 
             $q = "SELECT
-                    b.id,
-                    b.kd_buku,
-                    b.judul,
-                    b.penulis,
-                    b.penerbit,
-                    b.tahun_terbit,
-                    b.kategori,
-                    b.stok
-                FROM buku b
-                WHERE b.judul LIKE '%$search%'
-                OR b.kd_buku LIKE '%$search%'
-                OR b.penulis LIKE '%$search%'
-                OR b.penerbit LIKE '%$search%'
-                OR b.kategori LIKE '%$search%'
-                ORDER BY b.id DESC";
+                    id,
+                    kd_buku,
+                    judul,
+                    penulis,
+                    penerbit,
+                    tahun_terbit,
+                    kategori,
+                    stok
+                FROM buku
+                WHERE judul LIKE '%$search%'
+                OR kd_buku LIKE '%$search%'
+                OR penulis LIKE '%$search%'
+                OR penerbit LIKE '%$search%'
+                OR kategori LIKE '%$search%'
+                ORDER BY id DESC";
 
             $r = mysqli_query($koneksi, $q);
 
@@ -119,16 +119,16 @@ switch ($method) {
             $offset = ($page - 1) * $limit;
 
             $q = "SELECT
-                    b.id,
-                    b.kd_buku,
-                    b.judul,
-                    b.penulis,
-                    b.penerbit,
-                    b.tahun_terbit,
-                    b.kategori,
-                    b.stok
-                FROM buku b
-                ORDER BY b.id DESC
+                    id,
+                    kd_buku,
+                    judul,
+                    penulis,
+                    penerbit,
+                    tahun_terbit,
+                    kategori,
+                    stok
+                FROM buku
+                ORDER BY id DESC
                 LIMIT $limit OFFSET $offset";
 
             $r = mysqli_query($koneksi, $q);
@@ -157,9 +157,9 @@ switch ($method) {
         }
 
         // get all
-        $q = "SELECT b.id, b.kd_buku, b.judul, b.penulis, b.penerbit, b.tahun_terbit, b.kategori, b.stok
-              FROM buku b
-              ORDER BY b.id DESC";
+        $q = "SELECT id, kd_buku, judul, penulis, penerbit, tahun_terbit, kategori, stok
+              FROM buku
+              ORDER BY id DESC";
 
         $r = mysqli_query($koneksi, $q);
 
@@ -207,7 +207,47 @@ switch ($method) {
 
         break;
 
-    // put & delete
+    case 'PUT':
+        // put
+        $input = json_decode(file_get_contents("php://input"), true);
+
+        // cek apakah input ada dan field id, kd_buku, dll ada
+        if (!$input || !isset($_GET['id']) || !isset($input['kd_buku']) || !isset($input['judul']) || !isset($input['penulis']) || !isset($input['penerbit']) || !isset($input['tahun_terbit']) || !isset($input['kategori']) || !isset($input['stok'])) {
+            sendResponse(false, "field id, kd_buku, judul, penulis, penerbit, tahun_terbit, kategori, stok wajib", null, 400);
+        }
+
+        $id = $_GET['id'];
+        $kd_buku = $input['kd_buku'];
+        $judul = $input['judul'];
+        $penulis = $input['penulis'];
+        $penerbit = $input['penerbit'];
+        $tahun_terbit = $input['tahun_terbit'];
+        $kategori = $input['kategori'];
+        $stok = $input['stok'];
+
+        // cek apakah buku dengan id ada?
+        $cek_buku = mysqli_query($koneksi, "SELECT id FROM buku WHERE id = '$id'");
+        if (mysqli_num_rows($cek_buku) == 0) {
+            sendResponse(false, "buku tidak ditemukan", null, 404);
+        }
+
+        // cek kode buku apakah ada atau tidak
+        $cek_kd_buku = mysqli_query($koneksi, "SELECT kd_buku FROM buku WHERE kd_buku='$kd_buku' AND id != '$id'");
+        if (mysqli_num_rows($cek_kd_buku) > 0) {
+            sendResponse(false, "kode buku sudah terdaftar", null, 409);
+        }
+
+        // update data (perbaikan string $q ditutup dengan benar)
+        $q = "UPDATE buku SET kd_buku = '$kd_buku', judul = '$judul', penulis = '$penulis', penerbit = '$penerbit', tahun_terbit = '$tahun_terbit', kategori = '$kategori', stok = '$stok' WHERE id = '$id'";
+
+        if (mysqli_query($koneksi, $q)) {
+            sendResponse(true, "data berhasil diperbaharui", ["id" => $id], 200);
+        } else {
+            sendResponse(false, "query gagal: " . mysqli_error($koneksi), null, 500);
+        }
+
+        break;
+
     default:
         sendResponse(false, "method tidak diijinkan", null, 405);
         break;
