@@ -109,6 +109,67 @@ switch ($method) {
             200);
         }
 
+        //page
+    if (isset($_GET['page']) || isset($_GET['limit'])) {
+
+        $page = isset($_GET['page'])
+            ? (int) $_GET['page']
+            : 1;
+
+        $limit = isset($_GET['limit'])
+            ? (int) $_GET['limit']
+            : 10;
+
+        if ($page < 1) {
+            $page = 1;
+        }
+
+        if ($limit < 1) {
+            $limit = 10;
+        }
+
+        $offset = ($page - 1) * $limit;
+
+        $q = "SELECT
+                p.id,
+                p.kd_peminjaman,
+                a.nama AS nama_anggota,
+                b.judul AS judul_buku,
+                p.tanggal_pinjam,
+                p.tanggal_kembali,
+                p.status
+            FROM peminjaman p
+            LEFT JOIN anggota a ON p.anggota_id = a.id
+            LEFT JOIN buku b ON p.buku_id = b.id
+            ORDER BY p.id DESC
+            LIMIT $limit OFFSET $offset";
+
+            $r = mysqli_query($koneksi, $q);
+
+            if (!$r) {
+            error_log(mysqli_error($koneksi));
+
+            sendResponse(
+                false,
+                "terjadi kesalahan pada server",
+                null,
+                500
+            );
+            }
+
+            $data = [];
+
+            while ($row = mysqli_fetch_assoc($r)) {
+            $data[] = $row;
+    }
+
+            sendResponse(
+                true,
+                "berhasil",
+                $data,
+                200);
+    }
+
             default:
             sendResponse(false, "method tidak diijinkan", null, 405);
             break;
