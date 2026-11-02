@@ -1,0 +1,745 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Thunderclient",
+    "collectionId": "556157e6-656f-43db-9529-b449b53ae471",
+    "dateExported": "2026-11-02T14:43:28.842Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "06b867a7-443f-472b-9af3-2af71177c3c1",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?page=1&limit=5",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2026-11-02T13:53:08.251Z",
+            "modified": "2026-11-02T13:53:08.251Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "16d8d5a3-bf4e-419c-9d4f-b9d9bc720c17",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2026-11-02T13:53:50.602Z",
+            "modified": "2026-11-02T13:53:50.602Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "32ced802-db1d-4c21-afd8-f826ce077258",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2026-11-02T13:57:31.929Z",
+            "modified": "2026-11-02T13:57:31.929Z",
+            "headers": []
+        },
+        {
+            "_id": "3982d9f6-c450-4667-bdb5-7a648c0da21c",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?search=steven",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2026-11-02T14:01:08.847Z",
+            "modified": "2026-11-02T14:01:08.847Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "steven",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "5908e9a0-06ac-461d-a513-c590326dc98a",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2026-11-02T14:01:59.644Z",
+            "modified": "2026-11-02T14:01:59.644Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "6a70ccc1-1b91-441d-9e46-885b3555c842",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=6",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2026-11-02T14:03:56.307Z",
+            "modified": "2026-11-02T14:03:56.307Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "cd5e45c0-42de-4903-ba46-922b71aa5f1c",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2026-11-02T14:05:46.490Z",
+            "modified": "2026-11-02T14:05:46.490Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 1,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalika\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "fa66937a-4c3d-45ab-b827-a626ce490f6b",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2026-11-02T14:06:07.747Z",
+            "modified": "2026-11-02T14:06:07.747Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 1,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6038e7c2-978a-4f21-8180-6e7307c78f98",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2026-11-02T14:07:05.363Z",
+            "modified": "2026-11-02T14:07:05.363Z",
+            "headers": []
+        },
+        {
+            "_id": "ccf80f5c-b9ed-4feb-a5e6-f3435762960f",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2026-11-02T14:08:08.202Z",
+            "modified": "2026-11-02T14:08:08.202Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 6,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "587c68d3-04d3-48a4-8698-1eaf7331b0a5",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2026-11-02T14:08:24.563Z",
+            "modified": "2026-11-02T14:08:24.563Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 1,",
+                    "  \"buku_id\": 6,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "620a7322-812b-433f-8edb-e44445857a5e",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2026-11-02T14:09:15.796Z",
+            "modified": "2026-11-02T14:09:15.796Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ001\",",
+                    "  \"anggota_id\": 1,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "11762ac0-ebe2-4874-85f6-103360dd65e8",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=6",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2026-11-02T14:10:32.801Z",
+            "modified": "2026-11-02T14:10:32.801Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 2,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "52d74664-55f7-45bb-9872-68c5a99931f5",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=6",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2026-11-02T14:10:55.245Z",
+            "modified": "2026-11-02T14:10:55.245Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "7dd59391-3862-4f4e-886f-c72be78e9eff",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=8",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2026-11-02T14:12:11.598Z",
+            "modified": "2026-11-02T14:12:11.598Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "8",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 2,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "3d7e5906-fa55-4d60-85b6-1f10dba2a492",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2026-11-02T14:13:24.081Z",
+            "modified": "2026-11-02T14:13:24.081Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_peminjaman\": \"PMJ006\",",
+                    "  \"anggota_id\": 2,",
+                    "  \"buku_id\": 1,",
+                    "  \"tanggal_pinjam\": \"2026-11-01\",",
+                    "  \"tanggal_kembali\": \"2026-11-08\",",
+                    "  \"status\": \"Dikembalikan\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "95d93fb5-01e3-4b38-88d2-b5ac6026c760",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=1",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=6",
+            "method": "DELETE",
+            "sortNum": 170000,
+            "created": "2026-11-02T14:14:24.738Z",
+            "modified": "2026-11-02T14:14:24.738Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "890feaed-3881-47db-a838-44f07bb0e14b",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=1",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=7",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2026-11-02T14:14:41.265Z",
+            "modified": "2026-11-02T14:14:41.265Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "7",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "60245804-69e4-47e8-8196-9a22f56e1615",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/peminjaman.php?id=1",
+            "url": "http://localhost/uts-perpustakaan/api/peminjaman.php?id",
+            "method": "DELETE",
+            "sortNum": 190000,
+            "created": "2026-11-02T14:15:06.674Z",
+            "modified": "2026-11-02T14:15:06.674Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "dce134bf-9faa-440e-a915-6666c3e8fa84",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=1",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2026-11-02T14:16:33.186Z",
+            "modified": "2026-11-02T14:16:33.186Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567891\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "9497ba1e-7690-415e-8015-a05b4b14e3c4",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2026-11-02T14:17:01.859Z",
+            "modified": "2026-11-02T14:17:01.859Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567891\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "88e8fbeb-6110-4a1b-a01c-5d95396dc5a6",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?search=galang",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2026-11-02T14:17:59.165Z",
+            "modified": "2026-11-02T14:17:59.165Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "galang",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567891\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "d5b174b3-3dd9-4ef0-9c0d-19975c945834",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?page=1&limit=5",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2026-11-02T14:18:33.953Z",
+            "modified": "2026-11-02T14:18:33.953Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567891\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "99ebbb75-6dc6-4e9d-8e44-d6ecced15075",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2026-11-02T14:19:22.202Z",
+            "modified": "2026-11-02T14:19:22.202Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567891\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "449a4057-22a6-47f5-9186-8c9a45303539",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "POST",
+            "sortNum": 250000,
+            "created": "2026-11-02T14:20:03.713Z",
+            "modified": "2026-11-02T14:20:03.713Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "1b65c17e-5ae3-4725-b386-2686913f7d6d",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2026-11-02T14:20:33.701Z",
+            "modified": "2026-11-02T14:20:33.701Z",
+            "headers": []
+        },
+        {
+            "_id": "096a56d1-52b9-4fa8-af3c-ad2eea6acfc1",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2026-11-02T14:21:16.094Z",
+            "modified": "2026-11-02T14:21:16.094Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT001\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "5b7d7792-5ba0-4e3e-9c26-7f30c6557239",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "POST",
+            "sortNum": 280000,
+            "created": "2026-11-02T14:22:08.460Z",
+            "modified": "2026-11-02T14:22:08.460Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT007\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"galang@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "03e5ce3f-4882-40ff-b91e-b66880b875e4",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "PATCH",
+            "sortNum": 290000,
+            "created": "2026-11-02T14:23:48.324Z",
+            "modified": "2026-11-02T14:23:48.324Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "e9c23e7c-502d-4929-859c-8d1752540869",
+            "colId": "556157e6-656f-43db-9529-b449b53ae471",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "method": "POST",
+            "sortNum": 300000,
+            "created": "2026-11-02T14:25:12.141Z",
+            "modified": "2026-11-02T14:25:12.141Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT007\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-lak\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rid@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        }
+    ],
+    "ref": "3mITcmc_jfHkND7mAjFrvf-hydQyBD-sxoWTMVDGIG7deHSAVYBQGSsU7ScSVCoXU7ulMeMtGntZnyAkQ41bzg"
+}

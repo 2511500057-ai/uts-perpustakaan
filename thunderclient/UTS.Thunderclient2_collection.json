@@ -1,0 +1,565 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Thunderclient2",
+    "collectionId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+    "dateExported": "2026-11-02T14:44:35.700Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4e3ce0be-a7b1-4a4d-a811-6c12c23bcf67",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2026-11-02T14:28:56.967Z",
+            "modified": "2026-11-02T14:28:56.967Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "43683152-de2f-4c8e-949c-4a778b68f487",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2026-11-02T14:29:31.424Z",
+            "modified": "2026-11-02T14:29:31.424Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "71302805-e320-4dfe-ad97-bc1a0769bb04",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=9",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2026-11-02T14:29:59.674Z",
+            "modified": "2026-11-02T14:29:59.674Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "d9abad85-c593-4dff-a675-f9495a7d38e1",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2026-11-02T14:31:20.811Z",
+            "modified": "2026-11-02T14:31:20.811Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_anggota\": \"AGT006\",",
+                    "  \"nama\": \"Rido\",",
+                    "  \"jenis_kelamin\": \"Laki-laki\",",
+                    "  \"no_hp\": \"081234567890\",",
+                    "  \"alamat\": \"Jl. Depati Hamzah Pangkalpinang\",",
+                    "  \"email\": \"rido@gmail.com\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6713d3ae-39ea-48df-8591-108c7612b5d1",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2026-11-02T14:32:25.078Z",
+            "modified": "2026-11-02T14:32:25.078Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "61caf493-1218-4751-a2e7-d30650264246",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id=8",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2026-11-02T14:33:01.417Z",
+            "modified": "2026-11-02T14:33:01.417Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "8",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "fc9d46b6-b39f-434f-a6fb-7d816b7376fe",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/anggota.php?id=6",
+            "url": "http://localhost/uts-perpustakaan/api/anggota.php?id",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2026-11-02T14:33:31.593Z",
+            "modified": "2026-11-02T14:33:31.593Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "94c8b937-6c47-4169-aade-62b2a1dcb40a",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2026-11-02T14:34:25.950Z",
+            "modified": "2026-11-02T14:34:25.950Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ac69f27e-dd89-406a-af7c-552ffbd045db",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2026-11-02T14:34:48.401Z",
+            "modified": "2026-11-02T14:34:48.401Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c13ddaa8-08af-4a58-aea3-e2c3f3bd7816",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?search=laut",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2026-11-02T14:35:44.350Z",
+            "modified": "2026-11-02T14:35:44.350Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "laut",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "42f90869-c715-442f-94ad-b087cbfeaf9e",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?page=1&limit=3",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2026-11-02T14:36:16.035Z",
+            "modified": "2026-11-02T14:36:16.035Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "93c4ba73-7f10-450f-8302-f5b11e9e59a6",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2026-11-02T14:37:08.250Z",
+            "modified": "2026-11-02T14:37:08.250Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK006\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "4af868c3-3882-40cb-9c84-e46ba3df8ad6",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2026-11-02T14:37:31.931Z",
+            "modified": "2026-11-02T14:37:31.931Z",
+            "headers": []
+        },
+        {
+            "_id": "731d3e0a-6ee9-449d-b96b-ee7afbb33c98",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2026-11-02T14:37:59.472Z",
+            "modified": "2026-11-02T14:37:59.472Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK002\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "ab3bf91e-ca54-4758-90bc-835254072983",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php",
+            "method": "PATCH",
+            "sortNum": 150000,
+            "created": "2026-11-02T14:38:42.533Z",
+            "modified": "2026-11-02T14:38:42.533Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK002\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "22935851-1ec7-481a-9d8c-41318fae5247",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2026-11-02T14:39:33.426Z",
+            "modified": "2026-11-02T14:39:33.426Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK007\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"20141\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "914e71e7-d6f2-4a72-8d63-26de95d1d7fa",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=6",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2026-11-02T14:40:13.591Z",
+            "modified": "2026-11-02T14:40:13.591Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK006\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "fec0beb4-da19-402c-ba7f-d974c479e3b8",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=6",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2026-11-02T14:40:33.169Z",
+            "modified": "2026-11-02T14:40:33.169Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "674fe808-6423-48a2-aace-39dcde2a9f26",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=8",
+            "method": "PUT",
+            "sortNum": 190000,
+            "created": "2026-11-02T14:40:58.389Z",
+            "modified": "2026-11-02T14:40:58.389Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "8",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK006\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "98d504c3-0676-41fc-a877-0378058a7b6f",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id",
+            "method": "PUT",
+            "sortNum": 200000,
+            "created": "2026-11-02T14:41:22.575Z",
+            "modified": "2026-11-02T14:41:22.575Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"kd_buku\": \"BK006\",",
+                    "  \"judul\": \"Naruto\",",
+                    "  \"penulis\": \"kishimoto\",",
+                    "  \"penerbit\": \"gramed\",",
+                    "  \"tahun_terbit\": \"2014\",",
+                    "  \"kategori\": \"komik\",",
+                    "  \"stok\": \"8\"",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "61b491db-56a5-48d7-8cb2-17c221465e6c",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=6",
+            "method": "DELETE",
+            "sortNum": 210000,
+            "created": "2026-11-02T14:41:51.539Z",
+            "modified": "2026-11-02T14:41:51.539Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "b9ba4962-5027-47a5-984d-6adaa7903094",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id=8",
+            "method": "DELETE",
+            "sortNum": 220000,
+            "created": "2026-11-02T14:42:05.839Z",
+            "modified": "2026-11-02T14:42:05.839Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "8",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "b4cca653-0dee-474a-813d-195b367aecf0",
+            "colId": "bd7d4f63-c04c-4cf7-8e48-6d34f1cd45ec",
+            "containerId": "",
+            "name": "http://localhost/uts-perpustakaan/api/buku.php",
+            "url": "http://localhost/uts-perpustakaan/api/buku.php?id",
+            "method": "DELETE",
+            "sortNum": 230000,
+            "created": "2026-11-02T14:42:39.003Z",
+            "modified": "2026-11-02T14:42:39.003Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "bdEZVREtAb4LoPJiYpP9d-lrO6qFJKybOixsbInc05kNcpGc_3swJDU-03I291CCaQaTgzqR34uBi5YP-Wl4HA"
+}
