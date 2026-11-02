@@ -129,7 +129,7 @@ Berikut merupakan rancangan ERD Sistem Informasi Perpustakaan.
     "data": []
 }
 ```
-
+ 
 ## 5. Cara Menjalankan Project
 
 1. Clone atau download repository GitHub.
