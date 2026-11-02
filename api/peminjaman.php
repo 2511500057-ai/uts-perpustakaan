@@ -367,6 +367,7 @@ switch ($method) {
                     mysqli_stmt_bind_param($stmt, "siisssi", $kd_peminjaman, $anggota_id, $buku_id, $tanggal_pinjam, $tanggal_kembali, $status, $id);
 
                     if (mysqli_stmt_execute($stmt)) {
+                        $affected_rows = mysqli_stmt_affected_rows($stmt);
                         sendResponse(true, "data berhasil diperbaharui", ["id" => $id], 200);
                     } else {
                         error_log(mysqli_error($koneksi));
@@ -401,6 +402,7 @@ switch ($method) {
                 mysqli_stmt_bind_param($stmt, "i", $id);
 
                 if (mysqli_stmt_execute($stmt)) {
+                    $affected_rows = mysqli_stmt_affected_rows($stmt);
                     sendResponse(true, "data berhasil dihapus", ["id" => $id], 200);
                 } else {
                     error_log(mysqli_error($koneksi));
