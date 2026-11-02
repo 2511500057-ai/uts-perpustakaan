@@ -388,7 +388,6 @@ switch ($method) {
 
     break;
 
-
     default:
         sendResponse(false, "method tidak diijinkan", null, 405);
     break;
