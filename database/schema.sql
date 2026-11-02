@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS perpustakaan;
+
+USE perpustakaan;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.2
 -- https://www.phpmyadmin.net/
